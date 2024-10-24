@@ -1,0 +1,57 @@
+.vs-card{
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+}
+
+
+.vs-card-thumbnail{
+    display:inline-flex;
+    width: auto;
+    height: 150px;
+    border-bottom: 1px solid #444;
+}
+
+.vs-card-thumbnail-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vs-card-thumbnail-duration{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+.vs-card-info{
+    display: flex;
+    padding: 5px;
+}
+
+.vs-card-info-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+    margin-right: 20px;
+}
+
+.vs-card-info-profpic{
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    margin: 0 5px;
+}
+
+.vs-card-info-title{
+    align-self: flex-start;
+    margin: 0px;
+}
