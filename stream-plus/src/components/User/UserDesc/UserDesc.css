@@ -1,0 +1,40 @@
+
+.ud-container{
+    padding: 1% 0%;
+    display: flex;
+    align-items: center;
+}
+
+.ud-img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.ud-info{
+    display:inline-flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ud-username{
+    width: 100%;
+    margin: 0px;
+}
+
+.ud-suscriptors{
+    width: 100%;
+    margin: 0px;
+    color: #999999;
+}
+
+.ud-suscribe{
+    background-color: aliceblue;
+    color: #000;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 40px;
+}

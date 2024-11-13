@@ -7,11 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "env": "dotenv config && vite"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "firebase": "^11.0.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

@@ -1,0 +1,72 @@
+.vs-card{
+    background-color: #272727;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.vs-card:hover{
+    background-color: #11202c;
+    transition: .2s ease-in;
+}
+
+.vs-card:hover .vs-card-thumbnail-img{
+    background-color: #272727;
+}
+
+.vs-card-thumbnail{
+    display:inline-flex;
+    position: relative;
+    width: auto;
+    height: 60%;
+    border-bottom: 1px solid #444;
+}
+
+.vs-card-thumbnail-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vs-card-thumbnail-duration{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+    color: white;
+    padding: 5px;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 3px;
+}
+
+
+.vs-card-info{
+    display: flex;
+    padding: 5px;
+    height: 40%;
+    padding-top: 10px;
+}
+
+.vs-card-info-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+    margin-right: 20px;
+}
+
+.vs-card-info-profpic{
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    margin: 2px 10px 0px 10px;
+}
+
+.vs-card-info-title{
+    align-self: flex-start;
+    font-size: 20px;
+    margin: 0px;
+}

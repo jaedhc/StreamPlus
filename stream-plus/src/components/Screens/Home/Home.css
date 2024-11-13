@@ -1,0 +1,16 @@
+.ft-todo {
+    margin-left: 20vw;
+    width: 80%;
+    padding: 20px;
+    max-height: 90vh; /* Ajusta esta altura según tus necesidades */
+    overflow-y: auto; /* Permite el scroll vertical */
+}
+
+
+.ft-videos{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}

@@ -1,0 +1,15 @@
+.tl-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.tl-container-title{
+
+}
+
+.tl-container-img{
+    width: 30px;
+    height: 30px;
+    padding-left: 2%;
+}

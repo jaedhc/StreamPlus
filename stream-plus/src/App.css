@@ -3,14 +3,9 @@
   display: block;
 }
 
-html{
+body, html{
   font-size: 16px;
-}
-
-.main-content{
-  width: 100vw;
-  display: flex;
-  align-items: flex-start;
+  overflow: hidden;
 }
 
 .logo {

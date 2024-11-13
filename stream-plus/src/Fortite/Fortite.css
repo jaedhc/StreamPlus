@@ -1,8 +1,0 @@
-.ft-todo{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding: 20px;
-    flex-wrap: wrap;
-}

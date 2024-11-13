@@ -4,16 +4,13 @@ import './index.css'
 import App from './App.jsx'
 //import { Video } from './Video/Video.jsx'
 //import Fort from './Fortite/Fortite.jsx'
-import { Fort } from './Fortite/Fortite.jsx'
-import { Menu } from './Menu/Menu.jsx'
-import { TopBar } from './TopBar/TopBar.jsx'
+import { MainContent } from './components/Screens/MainContent/MainContent.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <TopBar/>
-    <div className='main-content'>  
-      <Menu/>
-      <Fort/>
-    </div>
-  </StrictMode>
+  <BrowserRouter>
+    <StrictMode>
+      <MainContent/>
+    </StrictMode>
+  </BrowserRouter>
 )

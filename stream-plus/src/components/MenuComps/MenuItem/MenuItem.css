@@ -1,0 +1,34 @@
+.mi-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    transition: .2s ease-out;
+}
+
+.mi-container:hover{
+    background-color: #155F82;
+    cursor: pointer;
+}
+
+.mi-container-selected{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: #155F82;
+}
+
+.mi-itemname{
+    padding-left: 10px;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.mi-icon{
+    width: 25px;
+    height: 25px;
+    padding-left: 1vw;
+}
