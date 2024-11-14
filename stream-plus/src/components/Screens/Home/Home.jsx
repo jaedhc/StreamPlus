@@ -35,6 +35,9 @@ export function Home({onChange}){
         <>
           <div className='ft-todo'>
             <Title title="Explicación de la pagina" icon={icInfo}/>
+            <div className='ft-detalle'>
+              <p>Esta pagina está dedicada para subir videos de todo tipo, solo será necesaria una cuenta de usuario y ganas de crear contenido </p>
+            </div>
             <Title title="Recomendados" icon={icSparkle}/>
             <div className='ft-videos'>
             {videos.map((doc) => (

@@ -26,7 +26,7 @@ export function SignUp({onClose, setUid, onLogin}){
             });
 
             localStorage.setItem('authToken', response.data.token);
-            
+            localStorage.setItem('id', response.data.user.id);
             handleSetUid(response.data.token)
             setStatus(false);
         }catch(error){

@@ -1,4 +1,13 @@
 .sc-videos{
     width: 100%;
-    margin-left: 20vw;
+    margin-left: 22vw;
+    margin-right: 2vw;
+    margin-top: 30px;
+}
+
+.sc-title{
+    margin-top: 0px;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 25px;
 }

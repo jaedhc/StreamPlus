@@ -34,6 +34,7 @@ export function Search({handlerContent, onChange}){
     return(
         <>
             <div className='sc-videos'>
+                <p className='sc-title'>Search: "{searchQuery}"</p>
                 {videos.map((doc) => (
                 <>
                     <VideoExtended videoID={doc.id} video={doc} onSelected={getSelectedVid}/>

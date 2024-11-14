@@ -1,0 +1,16 @@
+.cm-container{
+    width: 100%;
+    display: flex;
+    background-color: #272727;
+    border-radius: 20px;
+}
+
+.cm-user-photo-cont{
+    margin: 13px 10px 10px 10px;
+}
+
+.cm-user-photo{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}

@@ -37,7 +37,7 @@ export function UserPage({handlerContent, onChange}){
     };
 
     const handleUploadProfile = async (file) => {
-      try{
+      return new Promise((resolve, reject) => {
         const id = localStorage.getItem('id');
         const storageRef = ref(storage, `Users/${id}/profile/${id}`);
 
@@ -53,20 +53,21 @@ export function UserPage({handlerContent, onChange}){
           (error) => {
             console.error("Error al subir la imagen:", error);
           },
-          () => {
-            // Obtén el enlace de descarga
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              updateUser(downloadURL, 1);
-              setPhotoURL(downloadURL);
-              window.location.reload();
+          async () => {
+            try{
+              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+              await updateUser(downloadURL, 1);
+              await setPhotoURL(downloadURL);
               localStorage.setItem('photoURL', downloadURL);
               console.log("Enlace de descarga:", downloadURL);
-            });
+              window.location.reload();
+            } catch(error){
+              reject(error)
+            }
           }
         )
-      }catch(e){
-          console.log(e)
-      }
+      })
+
     }
 
     const handleUploadCover = async (file) => {
@@ -102,19 +103,25 @@ export function UserPage({handlerContent, onChange}){
     }
 
     const updateUser = async(downloadURL, type_file) => {
-      const API_URL = import.meta.env.VITE_API_URL;          
-      const token = localStorage.getItem('authToken');
-      await axios.post(
-        `${API_URL}/userPhoto`,
-        {
-          'url': downloadURL,
-          'file_type_id': type_file
-        },
-        {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
+      try{
+        const API_URL = import.meta.env.VITE_API_URL;     
+        const token = localStorage.getItem('authToken');
+        const response = await axios.post(
+          `${API_URL}/userPhoto`,
+          {
+            'url': downloadURL,
+            'file_type_id': type_file
+          },
+          {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+
+          console.log(response)
+      }catch(error){
+        console.log(error)
+      }
     }
 
     const getSelectedVid = (value) => {
@@ -135,7 +142,7 @@ export function UserPage({handlerContent, onChange}){
     useEffect(() => {
         getLocalResources();
         fetchVideos();
-    }, [])
+      }, [])
 
     const clearLocalStorage = () => {
         localStorage.clear();

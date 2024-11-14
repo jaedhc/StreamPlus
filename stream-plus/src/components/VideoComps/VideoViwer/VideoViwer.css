@@ -40,3 +40,31 @@
     display: flex;
     justify-self: start;
 }
+
+.vp-comment-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1px;
+}
+
+.vp-comment-input{
+    width: 80%;
+    height: 90%;
+}
+
+.vp-comment-btn{
+    width: auto;
+    height: 100%;
+}
+
+.vp-comments-container{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+    margin-bottom: 20px;
+}

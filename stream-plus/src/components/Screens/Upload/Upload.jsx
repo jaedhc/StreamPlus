@@ -1,5 +1,5 @@
 import './Upload.css'
-import back from '../../../assets/db.jpeg';
+import loading_img from '../../../assets/loading.gif'
 import placeholder from '../../../assets/img_placeholder.jpg'
 import { storage } from '../../../firebaseconfig';
 import { ref, uploadBytesResumable, getDownloadURL, listAll } from 'firebase/storage';
@@ -24,6 +24,8 @@ export function Upload(){
     const [downloadVideoURL, setDownloadVideoURL] = useState("");
     const [downloadCoverURL, setDownloadCoverURL] = useState("");
     const [videoDuration, setVideoDuration] = useState(null);
+    
+    const [loading, setLoading] = useState(false);
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -161,12 +163,16 @@ export function Upload(){
 
     }
 
-    const handleSubmit = (evento) => {
+    const handleSubmit = async (evento) => {
         evento.preventDefault();
+        setLoading(true);
         if(videoFile && coverFile && title != "" && description != ""){
-            handleOnUpload();
+            await handleOnUpload();
+            setLoading(false);
+            console.log(loading)
         } else {
-            alert("Completa todos los campos")
+            alert("Completa todos los campos");
+            setLoading(false);
         }
     }
 
@@ -216,8 +222,15 @@ export function Upload(){
                             placeholder='Description'
                             rows="5"
                             />
-                        <button className='upv-button-cancel'>Cancel</button>
-                        <button className='upv-button-upload' type='submit'>Subir</button>
+                        <div className='upv-menu'>
+                            {loading ? (
+                                    <>
+                                    <img className='upv-loading' src={loading_img}/>
+                                    </>
+                                ) : (<></>)}
+                            <button disabled={loading} className='upv-button-cancel'>Cancel</button>
+                            <button disabled={loading} className='upv-button-upload' type='submit'>Subir video</button>
+                        </div>
                     </form>
                     </>
                 ) : (
@@ -228,7 +241,13 @@ export function Upload(){
                         onDragLeave={handleDragLeave}
                         onDrop={handleDrop}
                         onClick={() => document.getElementById('video-upload-input').click()}
-                    >
+                    >   
+                        <div className='upv-info-title'>
+                            <p className='upv-title'>Subir Video</p>
+                        </div>
+                        <div className='upv-info'>
+                            <p className='upv-msg'>Arrastra y suelta un video aquí, o haz clic para seleccionar uno</p>
+                        </div>
                     </div>
                     <input 
                         type="file" 
@@ -237,7 +256,6 @@ export function Upload(){
                         onChange={handleFileChange}
                         style={{ display: 'none' }}
                     />
-                    <p>Arrastra y suelta un video aquí, o haz clic para seleccionar uno</p>
                     </>
                 )}
 

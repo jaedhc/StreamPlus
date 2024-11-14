@@ -14,3 +14,14 @@
     flex-wrap: wrap;
     margin-bottom: 60px;
 }
+
+.ft-detalle{
+    background-color: #272727;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.ft-detalle p{
+    font-weight: bold;
+    color: #a7a7a7;
+}
