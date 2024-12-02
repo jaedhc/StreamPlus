@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode development",
+    "build": "vite build",             
+    "start": "vite preview --mode prod",
     "lint": "eslint .",
     "preview": "vite preview",
     "env": "dotenv config && vite"
